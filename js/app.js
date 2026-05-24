@@ -106,30 +106,8 @@ function bindFooterButtons() {
   const homeBtn = document.getElementById('btnGoHome');
   const backHomeBtn = document.getElementById('btnBackHome');
 
-  let skipBtn = document.getElementById('btnSkip');
 
   let menuBtn = document.getElementById('btnBackToMenu');
-
-  if ((!skipBtn || !menuBtn) && nextBtn?.parentElement) {
-    if (!skipBtn) {
-
-      skipBtn = document.createElement('button');
-      skipBtn.type = 'button';
-      skipBtn.id = 'btnSkip';
-      skipBtn.className = 'btn btn-ghost';
-      skipBtn.style.marginRight = 'auto';
-      skipBtn.textContent = 'Skip';
-      nextBtn.parentElement.insertBefore(skipBtn, nextBtn);
-
-      skipBtn.addEventListener('click', () => {
-        if (!state.answered) {
-          window.ui?.showToast?.('Skip requires selecting an answer.', 'wrong');
-          return;
-        }
-        nextQuestion();
-      });
-    }
-
 
     if (!menuBtn) {
       menuBtn = document.createElement('button');

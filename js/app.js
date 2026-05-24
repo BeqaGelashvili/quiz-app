@@ -90,6 +90,31 @@ function bindFooterButtons() {
   const homeBtn = document.getElementById('btnGoHome');
   const backHomeBtn = document.getElementById('btnBackHome');
 
+  // --- ADDED: Back to Menu Button Logic ---
+  let menuBtn = document.getElementById('btnBackToMenu');
+
+  // Only create it if it doesn't exist yet
+  if (!menuBtn && nextBtn) {
+    menuBtn = document.createElement('button');
+    menuBtn.type = 'button';
+    menuBtn.id = 'btnBackToMenu';
+    menuBtn.className = 'btn'; // Standard button styling
+    menuBtn.style.marginRight = 'auto'; // Pushes it to the left side
+    menuBtn.innerHTML = `
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right: 5px;">
+        <path d="M19 12H5M5 12l7 7M5 12l7-7"/>
+      </svg> Menu`;
+    
+    // Insert it before the Next button in the footer
+    nextBtn.parentElement.insertBefore(menuBtn, nextBtn);
+
+    menuBtn.onclick = () => {
+      if(confirm("Are you sure? Your progress will be lost.")) {
+        window.ui.showScreen('screenHome');
+      }
+    };
+  }
+
   if (nextBtn) nextBtn.onclick = () => nextQuestion();
   if (restartBtn) restartBtn.onclick = () => window.app.startQuiz(state.subjectKey, state.levelKey);
   if (homeBtn) homeBtn.onclick = () => window.ui.showScreen('screenHome');

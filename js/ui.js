@@ -7,13 +7,12 @@ function showScreen(screenId) {
   const el = $(screenId);
   el.classList.add('active');
   el.style.animation = 'none';
-  el.offsetHeight; 
+  el.offsetHeight;
   el.style.animation = '';
 }
 
 function showToast(msg, type) {
   const t = $('feedbackToast');
-  if (!t) return;
   t.textContent = msg;
   t.className = `feedback-toast ${type}-toast show`;
   setTimeout(() => t.classList.remove('show'), 1800);
@@ -41,7 +40,7 @@ function renderHome(subjects) {
       document.querySelectorAll('.subject-card').forEach((c) => c.classList.remove('selected'));
       card.classList.add('selected');
 
-      const overlay = $('loaderOverlay');
+      const overlay = document.getElementById('loaderOverlay');
       if (overlay) overlay.classList.add('show');
 
       setTimeout(() => {
@@ -101,17 +100,17 @@ function renderDifficulty(subject) {
 
 function renderQuizQuestion(params) {
   const {
-    subjectName, levelLabel, total, idx, score,
-    correctCount, wrongCount, question, points, isLast
+    subjectName,
+    levelLabel,
+    total,
+    idx,
+    score,
+    correctCount,
+    wrongCount,
+    question,
+    points,
+    isLast
   } = params;
-
-  const counter = document.querySelector('.question-counter');
-  if (counter) {
-    counter.textContent = ""; 
-    counter.style.textAlign = "center";
-    counter.style.width = "100%";
-    counter.style.display = "block";
-  }
 
   $('qSubject').textContent = subjectName;
   $('qLevel').textContent = levelLabel;

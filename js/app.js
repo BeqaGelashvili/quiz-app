@@ -14,18 +14,16 @@ const state = {
 
 async function init() {
   if (!window.QuizAPI) {
-    console.error('QuizAPI missing. Check js/questions.js load order.');
+    console.error('QuizAPI missing. Ensure questions.js is loaded in index.html');
     return;
   }
 
   try {
     const subjects = await window.QuizAPI.getSubjects();
-    const normalizedSubjects = normalizeSubjects(subjects);
-
-    window.app.selectSubjects(normalizedSubjects);
+    window.app.selectSubjects(subjects);
   } catch (err) {
     console.error(err);
-    window.ui?.showToast?.('Failed to load quiz data. Start json-server first.', 'wrong');
+    window.ui?.showToast?.('Error loading quiz data. Check console.', 'wrong');
   }
 }
 

@@ -112,7 +112,7 @@ main {
 
 .options {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: 1fr; 
   gap: 12px;
   margin-bottom: 24px;
 }
@@ -129,12 +129,26 @@ main {
   transition: all .15s ease;
 }
 
+.quiz-footer {
+  display: flex;
+  flex-direction: column; 
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--stroke);
+}
+
+.question-counter {
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+
 .btn-row {
   display: flex;
   justify-content: space-between;
   gap: 10px;
 }
-
 .btn {
   border: 1px solid var(--stroke);
   background: rgba(255, 255, 255, .05);
@@ -152,4 +166,30 @@ main {
 .btn-primary {
   background: linear-gradient(90deg, rgba(108, 99, 255, .3), rgba(0, 229, 160, .2));
   border-color: var(--primary);
+}
+
+.progress-track { height: 8px; background: rgba(255, 255, 255, .06); border-radius: 999px; overflow: hidden; margin-bottom: 20px; }
+.progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #6c63ff, #00e5a0); transition: width 0.4s ease; }
+
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 7, 18, .9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+.loader-overlay.show { display: flex; }
+.loader { font-size: 10px; width: 1em; height: 1em; border-radius: 50%; position: relative; animation: mulShdSpin 1.1s infinite ease; }
+
+@keyframes mulShdSpin {
+  0%, 100% { box-shadow: 0em -2.6em 0em 0em #ffffff, 1.8em -1.8em 0 0em rgba(255,255,255,.2), 2.5em 0em 0 0em rgba(255,255,255,.2), 1.75em 1.75em 0 0em rgba(255,255,255,.2), 0em 2.5em 0 0em rgba(255,255,255,.2), -1.8em 1.8em 0 0em rgba(255,255,255,.2), -2.6em 0em 0 0em rgba(255,255,255,.5), -1.8em -1.8em 0 0em rgba(255,255,255,.7); }
+  12.5% { box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,.7), 1.8em -1.8em 0 0em #ffffff, 2.5em 0em 0 0em rgba(255,255,255,.2), 1.75em 1.75em 0 0em rgba(255,255,255,.2), 0em 2.5em 0 0em rgba(255,255,255,.2), -1.8em 1.8em 0 0em rgba(255,255,255,.2), -2.6em 0em 0 0em rgba(255,255,255,.2), -1.8em -1.8em 0 0em rgba(255,255,255,.5); }
+  25% { box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,.5), 1.8em -1.8em 0 0em rgba(255,255,255,.7), 2.5em 0em 0 0em #ffffff, 1.75em 1.75em 0 0em rgba(255,255,255,.2), 0em 2.5em 0 0em rgba(255,255,255,.2), -1.8em 1.8em 0 0em rgba(255,255,255,.2), -2.6em 0em 0 0em rgba(255,255,255,.2), -1.8em -1.8em 0 0em rgba(255,255,255,.2); }
+  37.5% { box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,.2), 1.8em -1.8em 0 0em rgba(255,255,255,.5), 2.5em 0em 0 0em rgba(255,255,255,.7), 1.75em 1.75em 0 0em #ffffff, 0em 2.5em 0 0em rgba(255,255,255,.2), -1.8em 1.8em 0 0em rgba(255,255,255,.2), -2.6em 0em 0 0em rgba(255,255,255,.2), -1.8em -1.8em 0 0em rgba(255,255,255,.2); }
+  50% { box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,.2), 1.8em -1.8em 0 0em rgba(255,255,255,.2), 2.5em 0em 0 0em rgba(255,255,255,.5), 1.75em 1.75em 0 0em rgba(255,255,255,.7), 0em 2.5em 0 0em #ffffff, -1.8em 1.8em 0 0em rgba(255,255,255,.2), -2.6em 0em 0 0em rgba(255,255,255,.2), -1.8em -1.8em 0 0em rgba(255,255,255,.2); }
+  62.5% { box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,.2), 1.8em -1.8em 0 0em rgba(255,255,255,.2), 2.5em 0em 0 0em rgba(255,255,255,.2), 1.75em 1.75em 0 0em rgba(255,255,255,.5), 0em 2.5em 0 0em rgba(255,255,255,.7), -1.8em 1.8em 0 0em #ffffff, -2.6em 0em 0 0em rgba(255,255,255,.2), -1.8em -1.8em 0 0em rgba(255,255,255,.2); }
+  75% { box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,.2), 1.8em -1.8em 0 0em rgba(255,255,255,.2), 2.5em 0em 0 0em rgba(255,255,255,.2), 1.75em 1.75em 0 0em rgba(255,255,255,.2), 0em 2.5em 0 0em rgba(255,255,255,.5), -1.8em 1.8em 0 0em rgba(255,255,255,.7), -2.6em 0em 0 0em #ffffff, -1.8em -1.8em 0 0em rgba(255,255,255,.2); }
+  87.5% { box-shadow: 0em -2.6em 0em 0em rgba(255,255,255,.2), 1.8em -1.8em 0 0em rgba(255,255,255,.2), 2.5em 0em 0 0em rgba(255,255,255,.2), 1.75em 1.75em 0 0em rgba(255,255,255,.2), 0em 2.5em 0 0em rgba(255,255,255,.2), -1.8em 1.8em 0 0em rgba(255,255,255,.5), -2.6em 0em 0 0em rgba(255,255,255,.7), -1.8em -1.8em 0 0em #ffffff; }
 }

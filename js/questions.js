@@ -1,23 +1,23 @@
 const API_BASE = '.'; 
 
 const QuizAPI = (() => {
-  async function getSubjects() {
-    const res = await fetch(`${API_BASE}/subjects.json`); 
-    if (!res.ok) throw new Error(`Failed to load subjects (${res.status})`);
+
+  async function getData() {
+    const res = await fetch(`${API_BASE}/questions.js`); 
+    if (!res.ok) throw new Error(`Failed to load data (${res.status})`);
     return await res.json();
   }
 
-  async function getQuestions(subjectKey, levelKey) {
-    const res = await fetch(`${API_BASE}/questions.json`);
-    if (!res.ok) throw new Error(`Failed to load questions (${res.status})`);
-    
-    const allData = await res.json();
+  async function getSubjects() {
+    const data = await getData();
+    return data.subjects; 
+  }
 
-    const filteredQuestions = allData.filter(q => 
+  async function getQuestions(subjectKey, levelKey) {
+    const data = await getData();
+    return data.questions.filter(q => 
       q.subject === subjectKey && q.level === levelKey
     );
-
-    return filteredQuestions;
   }
 
   return {

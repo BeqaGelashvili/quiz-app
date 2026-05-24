@@ -112,7 +112,7 @@ main {
 
 .options {
   display: grid;
-  grid-template-columns: 1fr; 
+  grid-template-columns: 1fr;
   gap: 12px;
   margin-bottom: 24px;
 }
@@ -129,6 +129,9 @@ main {
   transition: all .15s ease;
 }
 
+.option-btn.correct { border-color: var(--primary2); background: rgba(0, 229, 160, 0.1); }
+.option-btn.wrong { border-color: #ff4d4d; background: rgba(255, 77, 77, 0.1); }
+
 .quiz-footer {
   display: flex;
   flex-direction: column;
@@ -136,12 +139,17 @@ main {
   padding-top: 16px;
   border-top: 1px solid var(--stroke);
 }
-
 .question-counter {
   text-align: center;
   color: var(--muted);
   font-size: 14px;
   font-weight: 700;
+  min-height: 1.2em;
+}
+
+.question-counter.hidden {
+  visibility: hidden;
+  opacity: 0;
 }
 
 .btn-row {

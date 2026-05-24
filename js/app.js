@@ -1,5 +1,3 @@
-
-
 const state = {
   subjectKey: null,
   levelKey: null,
@@ -14,7 +12,7 @@ const state = {
 
 async function init() {
   if (!window.QuizAPI) {
-    console.error('QuizAPI missing. Ensure questions.js is loaded in index.html');
+    console.error('QuizAPI missing. Ensure questions.js is loaded.');
     return;
   }
 
@@ -23,18 +21,8 @@ async function init() {
     window.app.selectSubjects(subjects);
   } catch (err) {
     console.error(err);
-    window.ui?.showToast?.('Error loading quiz data. Check console.', 'wrong');
+    window.ui?.showToast?.('Error loading quiz data.', 'wrong');
   }
-}
-
-function normalizeSubjects(subjects) {
-  return subjects.map((s) => ({
-    key: s.key,
-    name: s.name,
-    icon: s.icon,
-    color: s.color,
-    levels: s.levels
-  }));
 }
 
 window.app = {
@@ -45,12 +33,10 @@ window.app = {
 };
 
 window.app.selectSubjects = function (subjects) {
-  const selectedSubjects = subjects;
-
-  window.ui.renderHome(selectedSubjects);
+  window.ui.renderHome(subjects);
 
   window.app.selectSubject = (subjectKey) => {
-    const subject = selectedSubjects.find((x) => x.key === subjectKey);
+    const subject = subjects.find((x) => x.key === subjectKey);
     if (!subject) return;
     window.ui.renderDifficulty(subject);
     state.subjectKey = subjectKey;
@@ -66,26 +52,27 @@ window.app.startQuiz = async function (subjectKey, levelKey) {
   state.wrongCount = 0;
   state.answered = false;
 
-  const subject = (await window.QuizAPI.getSubjects()).find((s) => s.key === subjectKey);
-
+  const subjects = await window.QuizAPI.getSubjects();
+  const subject = subjects.find((s) => s.key === subjectKey);
   const level = subject?.levels?.[levelKey];
+  
   state.levelPoints = level?.points ?? (levelKey === 'entry' ? 1 : levelKey === 'intermediate' ? 2 : 3);
 
   const questions = await window.QuizAPI.getQuestions(subjectKey, levelKey);
-
   state.questions = window.ui.shuffle(questions);
 
+  state._subjectName = subject?.name ?? subjectKey;
+  state._levelLabel = level?.label ?? levelKey;
 
+  renderCurrentQuestion();
+  window.ui.showScreen('screenQuiz');
+  bindFooterButtons();
+};
 
-  const subjectName = subject?.name ?? subjectKey;
-  const levelLabel = level?.label ?? levelKey;
-
-  state._subjectName = subjectName;
-  state._levelLabel = levelLabel;
-
+function renderCurrentQuestion() {
   window.ui.renderQuizQuestion({
-    subjectName,
-    levelLabel,
+    subjectName: state._subjectName,
+    levelLabel: state._levelLabel,
     total: state.questions.length,
     idx: state.currentIndex,
     score: state.score,
@@ -95,10 +82,7 @@ window.app.startQuiz = async function (subjectKey, levelKey) {
     points: state.levelPoints,
     isLast: state.currentIndex === state.questions.length - 1
   });
-  window.ui.showScreen('screenQuiz');
-
-  bindFooterButtons();
-};
+}
 
 function bindFooterButtons() {
   const nextBtn = document.getElementById('nextBtn');
@@ -106,48 +90,16 @@ function bindFooterButtons() {
   const homeBtn = document.getElementById('btnGoHome');
   const backHomeBtn = document.getElementById('btnBackHome');
 
-
-  let menuBtn = document.getElementById('btnBackToMenu');
-
-    if (!menuBtn) {
-      menuBtn = document.createElement('button');
-      menuBtn.type = 'button';
-      menuBtn.id = 'btnBackToMenu';
-      menuBtn.className = 'btn btn-ghost';
-      menuBtn.textContent = 'Back to menu';
-      nextBtn.parentElement.insertBefore(menuBtn, nextBtn);
-
-      menuBtn.addEventListener('click', () => {
-        window.ui?.showScreen?.('screenHome');
-      });
-    }
-  }
-
-
-  if (nextBtn) {
-    nextBtn.onclick = () => nextQuestion();
-  }
-
-  if (restartBtn) {
-    restartBtn.onclick = () => window.app.startQuiz(state.subjectKey, state.levelKey);
-  }
-  if (homeBtn) {
-    homeBtn.onclick = () => window.ui.showScreen('screenHome');
-  }
-  if (backHomeBtn) {
-    backHomeBtn.onclick = () => window.ui.showScreen('screenHome');
-  }
+  if (nextBtn) nextBtn.onclick = () => nextQuestion();
+  if (restartBtn) restartBtn.onclick = () => window.app.startQuiz(state.subjectKey, state.levelKey);
+  if (homeBtn) homeBtn.onclick = () => window.ui.showScreen('screenHome');
+  if (backHomeBtn) backHomeBtn.onclick = () => window.ui.showScreen('screenHome');
 
   const quizIcon = document.querySelector('header .logo-mark');
-
   if (quizIcon) {
     quizIcon.style.cursor = 'pointer';
-    quizIcon.style.border = 'none';
     quizIcon.onclick = () => window.ui.showScreen('screenHome');
   }
-
-
-
 }
 
 window.app.handleAnswer = function (selectedIndex, btnEl, correctIndex, points) {
@@ -157,60 +109,47 @@ window.app.handleAnswer = function (selectedIndex, btnEl, correctIndex, points) 
   const allButtons = document.querySelectorAll('.option-btn');
   allButtons.forEach((b) => (b.disabled = true));
 
+  const feedbackContainer = document.querySelector('.question-counter');
+
   if (selectedIndex === correctIndex) {
     btnEl.classList.add('correct');
     state.score += points;
     state.correctCount++;
-    window.ui.showToast('✓ Correct! +' + points + ' point' + (points > 1 ? 's' : ''), 'correct');
+    if (feedbackContainer) feedbackContainer.innerHTML = `<span style="color: var(--primary2)">✓ Correct! +${points} pts</span>`;
   } else {
     btnEl.classList.add('wrong');
     const correctBtn = allButtons[correctIndex];
     if (correctBtn) correctBtn.classList.add('correct');
     state.wrongCount++;
-    window.ui.showToast('✗ Incorrect!', 'wrong');
+    if (feedbackContainer) feedbackContainer.innerHTML = `<span style="color: #ef4444">✗ Incorrect</span>`;
   }
 
   const nextBtn = document.getElementById('nextBtn');
   if (nextBtn) nextBtn.disabled = false;
 
-  document.getElementById('qScore').textContent = `${state.score} pts`;
-  document.getElementById('qCorrect').textContent = state.correctCount;
-  document.getElementById('qWrong').textContent = state.wrongCount;
+  const scoreEl = document.getElementById('qScore');
+  const correctEl = document.getElementById('qCorrect');
+  const wrongEl = document.getElementById('qWrong');
+  
+  if (scoreEl) scoreEl.textContent = `${state.score} pts`;
+  if (correctEl) correctEl.textContent = state.correctCount;
+  if (wrongEl) wrongEl.textContent = state.wrongCount;
 };
 
 function nextQuestion() {
   state.currentIndex++;
 
   if (state.currentIndex >= state.questions.length) {
-    return showResults();
+    window.ui.renderResults({
+      total: state.questions.length,
+      correctCount: state.correctCount,
+      wrongCount: state.wrongCount
+    });
+    return;
   }
 
   state.answered = false;
-
-  const idx = state.currentIndex;
-  const total = state.questions.length;
-  const question = state.questions[idx];
-
-  window.ui.renderQuizQuestion({
-    subjectName: state._subjectName,
-    levelLabel: state._levelLabel,
-    total,
-    idx,
-    score: state.score,
-    correctCount: state.correctCount,
-    wrongCount: state.wrongCount,
-    question,
-    points: state.levelPoints,
-    isLast: idx === total - 1
-  });
-}
-
-function showResults() {
-  window.ui.renderResults({
-    total: state.questions.length,
-    correctCount: state.correctCount,
-    wrongCount: state.wrongCount
-  });
+  renderCurrentQuestion();
 }
 
 window.addEventListener('DOMContentLoaded', init);

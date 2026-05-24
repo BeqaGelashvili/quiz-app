@@ -125,9 +125,8 @@ main {
 }
 
 .back-btn:hover { opacity: 0.9; }
-.back-btn svg { width: 18px; height: 18px; fill: white; }
+.back-btn svg { width: 12px; height: 12px; fill: white; }
 
-/* Home/Subject styles */
 .home-title { margin: 10px 0; font-size: clamp(28px, 8vw, 36px); line-height: 1.1; }
 .subjects-grid {
   margin-top: 14px;
@@ -151,7 +150,6 @@ main {
 .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #6c63ff, #00e5a0); transition: width 0.4s ease; }
 .question-text { font-size: clamp(18px, 5vw, 22px); font-weight: 800; margin: 12px 0 20px; line-height: 1.3; }
 
-/* Options */
 .options { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 24px; }
 @media (min-width: 600px) { .options { grid-template-columns: repeat(2, 1fr); } }
 

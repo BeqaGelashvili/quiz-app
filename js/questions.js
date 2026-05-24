@@ -14,12 +14,9 @@ const QuizAPI = (() => {
 
   async function getQuestions(subjectKey, levelKey) {
     const data = await getData();
-
-    const filtered = data.questions.filter(q => 
+    return data.questions.filter(q => 
       q.subject === subjectKey && q.level === levelKey
     );
-
-    return filtered;
   }
 
   return {

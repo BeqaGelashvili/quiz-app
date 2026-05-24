@@ -1,0 +1,229 @@
+{
+  "subjects": [
+    {
+      "id": 1,
+      "key": "tech",
+      "name": "Technology",
+      "icon": "💻",
+      "color": "#6c63ff",
+      "levels": {
+        "entry": {
+          "label": "Entry",
+          "desc": "Beginner-friendly fundamentals",
+          "icon": "🌱",
+          "color": "#00e5a0",
+          "points": 1
+        },
+        "intermediate": {
+          "label": "Intermediate",
+          "desc": "For the curious tech enthusiast",
+          "icon": "⚡",
+          "color": "#f59e0b",
+          "points": 2
+        },
+        "expert": {
+          "label": "Expert",
+          "desc": "Deep technical knowledge required",
+          "icon": "🔥",
+          "color": "#ef4444",
+          "points": 3
+        }
+      }
+    },
+    {
+      "id": 2,
+      "key": "science",
+      "name": "Science",
+      "icon": "🔬",
+      "color": "#00e5a0",
+      "levels": {
+        "entry": {
+          "label": "Entry",
+          "desc": "Basic scientific concepts",
+          "icon": "🌱",
+          "color": "#00e5a0",
+          "points": 1
+        },
+        "intermediate": {
+          "label": "Intermediate",
+          "desc": "Deeper scientific understanding",
+          "icon": "⚡",
+          "color": "#f59e0b",
+          "points": 2
+        },
+        "expert": {
+          "label": "Expert",
+          "desc": "Advanced scientific mastery",
+          "icon": "🔥",
+          "color": "#ef4444",
+          "points": 3
+        }
+      }
+    },
+    {
+      "id": 3,
+      "key": "history",
+      "name": "History",
+      "icon": "🏛️",
+      "color": "#f59e0b",
+      "levels": {
+        "entry": {
+          "label": "Entry",
+          "desc": "Key historical milestones",
+          "icon": "🌱",
+          "color": "#00e5a0",
+          "points": 1
+        },
+        "intermediate": {
+          "label": "Intermediate",
+          "desc": "Deeper historical knowledge",
+          "icon": "⚡",
+          "color": "#f59e0b",
+          "points": 2
+        },
+        "expert": {
+          "label": "Expert",
+          "desc": "Scholarly historical analysis",
+          "icon": "🔥",
+          "color": "#ef4444",
+          "points": 3
+        }
+      }
+    }
+  ],
+  "questions": [
+    { "id": 1, "subject": "tech", "level": "entry", "q": "What does HTML stand for?", "options": ["Hyper Text Markup Language","High Tech Modern Language","Hyper Transfer Machine Logic","Hyperlink and Text Markup Layout"], "answer": 0, "points": 1 },
+    { "id": 2, "subject": "tech", "level": "entry", "q": "Which of the following is a programming language?", "options": ["HTML","CSS","Python","Markdown"], "answer": 2, "points": 1 },
+    { "id": 3, "subject": "tech", "level": "entry", "q": "What does CPU stand for?", "options": ["Central Processing Unit","Computer Personal Unit","Central Power Utility","Core Processing Unit"], "answer": 0, "points": 1 },
+    { "id": 4, "subject": "tech", "level": "entry", "q": "What does 'www' stand for in a website URL?", "options": ["World Wide Web","World Wide Wire","Web World Wide","Wide World Web"], "answer": 0, "points": 1 },
+    { "id": 5, "subject": "tech", "level": "entry", "q": "Which company created the iPhone?", "options": ["Samsung","Google","Apple","Microsoft"], "answer": 2, "points": 1 },
+    { "id": 6, "subject": "tech", "level": "entry", "q": "What is the function of a web browser?", "options": ["Edit code","Store files","Access websites","Send emails"], "answer": 2, "points": 1 },
+    { "id": 7, "subject": "tech", "level": "entry", "q": "Which of these is an operating system?", "options": ["Chrome","Word","Windows","Excel"], "answer": 2, "points": 1 },
+    { "id": 8, "subject": "tech", "level": "entry", "q": "What does USB stand for?", "options": ["Universal Serial Bus","Ultra Speed Band","Unified System Bridge","Universal Software Base"], "answer": 0, "points": 1 },
+    { "id": 9, "subject": "tech", "level": "entry", "q": "What device connects your home to the internet?", "options": ["Monitor","Router","Keyboard","Printer"], "answer": 1, "points": 1 },
+    { "id": 10, "subject": "tech", "level": "entry", "q": "What is a 'byte' in computing?", "options": ["A unit of memory","A type of processor","A network protocol","A display resolution"], "answer": 0, "points": 1 },
+    { "id": 11, "subject": "tech", "level": "entry", "q": "Which of these is a social media platform?", "options": ["Google Drive","Slack","Instagram","Dropbox"], "answer": 2, "points": 1 },
+    { "id": 12, "subject": "tech", "level": "entry", "q": "What does 'AI' stand for?", "options": ["Advanced Internet","Artificial Intelligence","Automated Interface","Application Integration"], "answer": 1, "points": 1 },
+    { "id": 13, "subject": "tech", "level": "entry", "q": "What is the primary use of Microsoft Excel?", "options": ["Image editing","Spreadsheets","Video editing","3D modeling"], "answer": 1, "points": 1 },
+    { "id": 14, "subject": "tech", "level": "entry", "q": "What does 'Wi-Fi' enable?", "options": ["Wireless internet","Wired printing","Bluetooth pairing","USB file transfer"], "answer": 0, "points": 1 },
+    { "id": 15, "subject": "tech", "level": "entry", "q": "Which key is used to undo an action on most computers?", "options": ["Ctrl+Z","Ctrl+Y","Ctrl+X","Ctrl+A"], "answer": 0, "points": 1 },
+
+    { "id": 16, "subject": "tech", "level": "intermediate", "q": "Which data structure operates on a LIFO (Last In, First Out) principle?", "options": ["Queue","Stack","Linked List","Tree"], "answer": 1, "points": 2 },
+    { "id": 17, "subject": "tech", "level": "intermediate", "q": "What is the time complexity of binary search?", "options": ["O(n)","O(n²)","O(log n)","O(1)"], "answer": 2, "points": 2 },
+    { "id": 18, "subject": "tech", "level": "intermediate", "q": "What does DNS stand for?", "options": ["Dynamic Network System","Domain Name System","Data Node Server","Distributed Name Service"], "answer": 1, "points": 2 },
+    { "id": 19, "subject": "tech", "level": "intermediate", "q": "Which HTTP status code indicates 'Not Found'?", "options": ["200","301","403","404"], "answer": 3, "points": 2 },
+    { "id": 20, "subject": "tech", "level": "intermediate", "q": "What is a 'version control system' used for?", "options": ["Managing RAM","Tracking code changes","Compressing files","Encrypting databases"], "answer": 1, "points": 2 },
+    { "id": 21, "subject": "tech", "level": "intermediate", "q": "Which language is primarily used for styling web pages?", "options": ["JavaScript","Python","CSS","SQL"], "answer": 2, "points": 2 },
+    { "id": 22, "subject": "tech", "level": "intermediate", "q": "What does REST stand for in API design?", "options": ["Remote Execution Standard Transfer","Representational State Transfer","Rapid Endpoint Secure Transport","Real-time Event Streaming Technology"], "answer": 1, "points": 2 },
+    { "id": 23, "subject": "tech", "level": "intermediate", "q": "What is the purpose of a 'firewall'?", "options": ["Speed up internet","Monitor CPU usage","Block unauthorized network access","Compress data"], "answer": 2, "points": 2 },
+    { "id": 24, "subject": "tech", "level": "intermediate", "q": "Which database query language uses SELECT, FROM, and WHERE?", "options": ["NoSQL","GraphQL","SQL","MongoDB"], "answer": 2, "points": 2 },
+    { "id": 25, "subject": "tech", "level": "intermediate", "q": "What is 'cloud computing'?", "options": ["Weather-based computing","Storing/processing data on remote servers","Offline file storage","GPU rendering technology"], "answer": 1, "points": 2 },
+    { "id": 26, "subject": "tech", "level": "intermediate", "q": "What does an IDE stand for?", "options": ["Internet Data Exchange","Integrated Development Environment","Interface Design Engine","Internal Debug Executor"], "answer": 1, "points": 2 },
+    { "id": 27, "subject": "tech", "level": "intermediate", "q": "In Git, what does 'commit' do?", "options": ["Uploads to GitHub","Saves a snapshot of changes","Deletes a branch","Merges code"], "answer": 1, "points": 2 },
+    { "id": 28, "subject": "tech", "level": "intermediate", "q": "What is 'responsive design'?", "options": ["Fast-loading pages","Adapting layout to screen size","Server-side rendering","Database optimization"], "answer": 1, "points": 2 },
+    { "id": 29, "subject": "tech", "level": "intermediate", "q": "Which protocol is used for secure data transfer over the web?", "options": ["HTTP","FTP","HTTPS","SMTP"], "answer": 2, "points": 2 },
+    { "id": 30, "subject": "tech", "level": "intermediate", "q": "What is the main purpose of an API?", "options": ["Style web pages","Allow software systems to communicate","Store user data","Render 3D graphics"], "answer": 1, "points": 2 },
+
+    { "id": 31, "subject": "tech", "level": "expert", "q": "In asymptotic analysis, what is the worst-case time complexity of QuickSort?", "options": ["O(n log n)","O(n²)","O(log n)","O(n)"], "answer": 1, "points": 3 },
+    { "id": 32, "subject": "tech", "level": "expert", "q": "What is a 'race condition' in concurrent programming?", "options": ["A CPU benchmark test","When two threads access shared data unpredictably","A memory overflow error","A network latency spike"], "answer": 1, "points": 3 },
+    { "id": 33, "subject": "tech", "level": "expert", "q": "Which CAP theorem property is sacrificed in eventual consistency systems?", "options": ["Consistency","Availability","Partition Tolerance","Durability"], "answer": 0, "points": 3 },
+    { "id": 34, "subject": "tech", "level": "expert", "q": "What does memoization primarily optimize?", "options": ["Memory usage","Redundant function call results","Network requests","Disk I/O"], "answer": 1, "points": 3 },
+
+    { "id": 35, "subject": "science", "level": "entry", "q": "What is the chemical formula for water?", "options": ["CO₂","H₂O","O₂","NaCl"], "answer": 1, "points": 1 },
+    { "id": 36, "subject": "science", "level": "entry", "q": "What planet is closest to the Sun?", "options": ["Venus","Earth","Mars","Mercury"], "answer": 3, "points": 1 },
+    { "id": 37, "subject": "science", "level": "entry", "q": "What force pulls objects toward Earth?", "options": ["Magnetism","Friction","Gravity","Tension"], "answer": 2, "points": 1 },
+    { "id": 38, "subject": "science", "level": "entry", "q": "What is the powerhouse of the cell?", "options": ["Nucleus","Ribosome","Mitochondria","Vacuole"], "answer": 2, "points": 1 },
+    { "id": 39, "subject": "science", "level": "entry", "q": "What gas do plants absorb during photosynthesis?", "options": ["Oxygen","Nitrogen","Carbon Dioxide","Hydrogen"], "answer": 2, "points": 1 },
+    { "id": 40, "subject": "science", "level": "entry", "q": "How many bones are in the adult human body?", "options": ["106","206","306","506"], "answer": 1, "points": 1 },
+    { "id": 41, "subject": "science", "level": "entry", "q": "What is the speed of light (approximately)?", "options": ["300,000 km/s","30,000 km/s","3,000 km/s","3,000,000 km/s"], "answer": 0, "points": 1 },
+    { "id": 42, "subject": "science", "level": "entry", "q": "What is the center of an atom called?", "options": ["Electron","Nucleus","Proton","Neutron"], "answer": 1, "points": 1 },
+    { "id": 43, "subject": "science", "level": "entry", "q": "What type of animal is a dolphin?", "options": ["Fish","Reptile","Mammal","Amphibian"], "answer": 2, "points": 1 },
+    { "id": 44, "subject": "science", "level": "entry", "q": "What is the boiling point of water at sea level (°C)?", "options": ["90°C","95°C","100°C","105°C"], "answer": 2, "points": 1 },
+    { "id": 45, "subject": "science", "level": "entry", "q": "Which planet has rings?", "options": ["Jupiter","Saturn","Uranus","All of the above"], "answer": 3, "points": 1 },
+    { "id": 46, "subject": "science", "level": "entry", "q": "What is the chemical symbol for gold?", "options": ["Go","Gd","Au","Ag"], "answer": 2, "points": 1 },
+    { "id": 47, "subject": "science", "level": "entry", "q": "What is the largest organ in the human body?", "options": ["Liver","Heart","Brain","Skin"], "answer": 3, "points": 1 },
+    { "id": 48, "subject": "science", "level": "entry", "q": "What is the process by which water changes from liquid to gas?", "options": ["Condensation","Evaporation","Sublimation","Precipitation"], "answer": 1, "points": 1 },
+    { "id": 49, "subject": "science", "level": "entry", "q": "Which part of the plant conducts photosynthesis?", "options": ["Root","Stem","Leaf","Flower"], "answer": 2, "points": 1 },
+
+    { "id": 50, "subject": "science", "level": "intermediate", "q": "What is Newton's Second Law of Motion?", "options": ["Every action has an equal reaction","F = ma","Objects at rest stay at rest","Energy cannot be created or destroyed"], "answer": 1, "points": 2 },
+    { "id": 51, "subject": "science", "level": "intermediate", "q": "What is the pH of a neutral solution?", "options": ["0","7","14","1"], "answer": 1, "points": 2 },
+    { "id": 52, "subject": "science", "level": "intermediate", "q": "What type of bond shares electrons between atoms?", "options": ["Ionic","Covalent","Metallic","Hydrogen"], "answer": 1, "points": 2 },
+    { "id": 53, "subject": "science", "level": "intermediate", "q": "What is the SI unit of electric current?", "options": ["Volt","Watt","Ampere","Ohm"], "answer": 2, "points": 2 },
+    { "id": 54, "subject": "science", "level": "intermediate", "q": "What is the process of nuclear fission?", "options": ["Atoms combining to release energy","Atoms splitting to release energy","Electrons jumping energy levels","Protons decaying into neutrons"], "answer": 1, "points": 2 },
+    { "id": 55, "subject": "science", "level": "intermediate", "q": "What does DNA stand for?", "options": ["Deoxyribonucleic Acid","Diribonucleic Acid","Deoxyribose Nitrogen Acid","Dynamic Nucleic Assembly"], "answer": 0, "points": 2 },
+    { "id": 56, "subject": "science", "level": "intermediate", "q": "What is Avogadro's number?", "options": ["3.14 × 10²³","6.02 × 10²³","9.81 × 10²³","1.38 × 10²³"], "answer": 1, "points": 2 },
+    { "id": 57, "subject": "science", "level": "intermediate", "q": "What phenomenon explains the bending of light around massive objects?", "options": ["Refraction","Diffraction","Gravitational lensing","Doppler effect"], "answer": 2, "points": 2 },
+    { "id": 58, "subject": "science", "level": "intermediate", "q": "In the periodic table, what determines an element's atomic number?", "options": ["Number of neutrons","Number of electrons","Number of protons","Atomic mass"], "answer": 2, "points": 2 },
+    { "id": 59, "subject": "science", "level": "intermediate", "q": "What is osmosis?", "options": ["Movement of solutes through a membrane","Movement of water through a semi-permeable membrane","Diffusion of gas molecules","Active transport of ions"], "answer": 1, "points": 2 },
+    { "id": 60, "subject": "science", "level": "intermediate", "q": "What is the half-life of a radioactive substance?", "options": ["Time for all atoms to decay","Time for half the atoms to decay","Time for substance to become inert","Time for radiation to stop"], "answer": 1, "points": 2 },
+    { "id": 61, "subject": "science", "level": "intermediate", "q": "Which law states that gas pressure and volume are inversely proportional at constant temperature?", "options": ["Charles's Law","Avogadro's Law","Boyle's Law","Gay-Lussac's Law"], "answer": 2, "points": 2 },
+    { "id": 62, "subject": "science", "level": "intermediate", "q": "What type of electromagnetic radiation has the shortest wavelength?", "options": ["Radio waves","Visible light","X-rays","Gamma rays"], "answer": 3, "points": 2 },
+    { "id": 63, "subject": "science", "level": "intermediate", "q": "What is the function of mitosis?", "options": ["Sexual reproduction","Production of gametes","Cell growth and repair","Protein synthesis"], "answer": 2, "points": 2 },
+    { "id": 64, "subject": "science", "level": "intermediate", "q": "What is a catalyst in a chemical reaction?", "options": ["A reactant consumed in the process","A substance that speeds up reaction without being consumed","A product formed at the end","An inhibitor that slows the reaction"], "answer": 1, "points": 2 },
+
+    { "id": 65, "subject": "science", "level": "expert", "q": "What does the Heisenberg Uncertainty Principle state?", "options": ["Energy is always conserved","You cannot simultaneously know exact position and momentum of a particle","Light speed is constant in all frames","Matter and energy are equivalent"], "answer": 1, "points": 3 },
+    { "id": 66, "subject": "science", "level": "expert", "q": "What is the Pauli Exclusion Principle?", "options": ["No two fermions can occupy the same quantum state simultaneously","Electrons repel each other via Coulomb force","Photons carry quantized energy E=hf","Mass curves spacetime"], "answer": 0, "points": 3 },
+    { "id": 67, "subject": "science", "level": "expert", "q": "What is the key postulate of special relativity?", "options": ["Gravity warps time equally for all observers","Laws of physics are the same in all inertial frames and light speed is constant","Mass is absolute regardless of velocity","Simultaneity is absolute"], "answer": 1, "points": 3 },
+    { "id": 68, "subject": "science", "level": "expert", "q": "What does the Hardy-Weinberg equilibrium describe?", "options": ["Protein folding stability","Allele frequency stability in a non-evolving population","Enzyme kinetics at saturation","DNA replication fidelity"], "answer": 1, "points": 3 },
+    { "id": 69, "subject": "science", "level": "expert", "q": "What is spontaneous symmetry breaking in physics?", "options": ["Random particle decay","System choosing a lower-symmetry state when a symmetric state becomes unstable","Conservation law violation","Quantum entanglement collapse"], "answer": 1, "points": 3 },
+    { "id": 70, "subject": "science", "level": "expert", "q": "What is the role of ATP synthase in cellular respiration?", "options": ["Breaks down glucose","Uses proton gradient to synthesize ATP via chemiosmosis","Transfers electrons in the electron transport chain","Catalyzes the Krebs cycle reactions"], "answer": 1, "points": 3 },
+    { "id": 71, "subject": "science", "level": "expert", "q": "What is the Chandrasekhar limit?", "options": ["Maximum speed of stellar jets","Maximum mass of a white dwarf (~1.4 solar masses) before collapsing","Minimum temperature for nuclear fusion","Maximum luminosity of a main-sequence star"], "answer": 1, "points": 3 },
+    { "id": 72, "subject": "science", "level": "expert", "q": "In molecular biology, what is 'alternative splicing'?", "options": ["Mutation during DNA replication","Different exon combinations producing multiple proteins from one gene","tRNA mismatch during translation","Horizontal gene transfer between organisms"], "answer": 1, "points": 3 },
+    { "id": 73, "subject": "science", "level": "expert", "q": "What does the Nernst equation calculate?", "options": ["Rate of enzyme reactions","Equilibrium potential of an ion across a membrane","Free energy of protein folding","Gibbs free energy of formation"], "answer": 1, "points": 3 },
+    { "id": 74, "subject": "science", "level": "expert", "q": "What is quantum entanglement?", "options": ["Wave-particle duality of photons","Two particles sharing correlated quantum states regardless of distance","Electron tunneling through energy barriers","Superposition of spin states"], "answer": 1, "points": 3 },
+    { "id": 75, "subject": "science", "level": "expert", "q": "What is the significance of the Gibbs free energy (ΔG < 0)?", "options": ["Reaction is endothermic","Reaction is spontaneous","Reaction is at equilibrium","Reaction requires a catalyst"], "answer": 1, "points": 3 },
+    { "id": 76, "subject": "science", "level": "expert", "q": "What is a 'quasar'?", "options": ["A type of neutron star","An extremely luminous active galactic nucleus powered by a supermassive black hole","A stellar remnant after supernova","A dark matter concentration"], "answer": 1, "points": 3 },
+    { "id": 77, "subject": "science", "level": "expert", "q": "In immunology, what is the mechanism of MHC class I antigen presentation?", "options": ["Presents extracellular antigens to helper T cells","Presents intracellular peptides to cytotoxic T cells","Activates B cells via Toll-like receptors","Triggers NK cell degranulation"], "answer": 1, "points": 3 },
+    { "id": 78, "subject": "science", "level": "expert", "q": "What is the renormalization group in physics?", "options": ["A method for solving differential equations","A framework for studying how physical systems change with observation scale","A technique for averaging quantum measurements","A model for particle spin interactions"], "answer": 1, "points": 3 },
+    { "id": 79, "subject": "science", "level": "expert", "q": "What defines a 'Bose-Einstein condensate'?", "options": ["Plasma at extremely high temperature","State of matter where bosons occupy the same quantum ground state near absolute zero","Fermionic superconducting state","High-pressure neutron degenerate matter"], "answer": 1, "points": 3 },
+
+    { "id": 80, "subject": "history", "level": "entry", "q": "In which year did World War II end?", "options": ["1943","1944","1945","1946"], "answer": 2, "points": 1 },
+    { "id": 81, "subject": "history", "level": "entry", "q": "Who was the first President of the United States?", "options": ["Abraham Lincoln","Thomas Jefferson","John Adams","George Washington"], "answer": 3, "points": 1 },
+    { "id": 82, "subject": "history", "level": "entry", "q": "Where was the ancient wonder, the Colossus of Rhodes, located?", "options": ["Greece","Egypt","Italy","Turkey"], "answer": 0, "points": 1 },
+    { "id": 83, "subject": "history", "level": "entry", "q": "What ancient civilization built the pyramids at Giza?", "options": ["Roman","Greek","Egyptian","Mesopotamian"], "answer": 2, "points": 1 },
+    { "id": 84, "subject": "history", "level": "entry", "q": "In what year did the Berlin Wall fall?", "options": ["1987","1989","1991","1993"], "answer": 1, "points": 1 },
+    { "id": 85, "subject": "history", "level": "entry", "q": "Who discovered America in 1492?", "options": ["Amerigo Vespucci","Ferdinand Magellan","Christopher Columbus","Vasco da Gama"], "answer": 2, "points": 1 },
+    { "id": 86, "subject": "history", "level": "entry", "q": "Which empire was ruled by Julius Caesar?", "options": ["Greek Empire","Ottoman Empire","Roman Empire","Byzantine Empire"], "answer": 2, "points": 1 },
+    { "id": 87, "subject": "history", "level": "entry", "q": "What war was fought between the North and South of the USA?", "options": ["Revolutionary War","Civil War","War of 1812","Mexican-American War"], "answer": 1, "points": 1 },
+    { "id": 88, "subject": "history", "level": "entry", "q": "Who was the leader of Nazi Germany?", "options": ["Mussolini","Stalin","Hitler","Franco"], "answer": 2, "points": 1 },
+    { "id": 89, "subject": "history", "level": "entry", "q": "In which country did the Industrial Revolution begin?", "options": ["France","USA","Germany","England"], "answer": 3, "points": 1 },
+    { "id": 90, "subject": "history", "level": "entry", "q": "What document declared American independence in 1776?", "options": ["Constitution","Magna Carta","Declaration of Independence","Bill of Rights"], "answer": 2, "points": 1 },
+    { "id": 91, "subject": "history", "level": "entry", "q": "Who was the first human to walk on the Moon?", "options": ["Buzz Aldrin","Yuri Gagarin","Neil Armstrong","John Glenn"], "answer": 2, "points": 1 },
+    { "id": 92, "subject": "history", "level": "entry", "q": "What ancient empire was ruled by Genghis Khan?", "options": ["Ottoman","Mongol","Persian","Chinese"], "answer": 1, "points": 1 },
+    { "id": 93, "subject": "history", "level": "entry", "q": "In which city were the first modern Olympic Games held in 1896?", "options": ["Paris","London","Athens","Rome"], "answer": 2, "points": 1 },
+    { "id": 94, "subject": "history", "level": "entry", "q": "What was the name of the ship that sank in 1912?", "options": ["Lusitania","Britannic","Titanic","Mauretania"], "answer": 2, "points": 1 },
+
+    { "id": 95, "subject": "history", "level": "intermediate", "q": "What year did the French Revolution begin?", "options": ["1776","1789","1804","1815"], "answer": 1, "points": 2 },
+    { "id": 96, "subject": "history", "level": "intermediate", "q": "What was the primary cause of World War I?", "options": ["Assassination of Archduke Franz Ferdinand","Invasion of Poland","Bombing of Pearl Harbor","The Great Depression"], "answer": 0, "points": 2 },
+    { "id": 97, "subject": "history", "level": "intermediate", "q": "The Magna Carta was signed in which year?", "options": ["1066","1215","1381","1453"], "answer": 1, "points": 2 },
+    { "id": 98, "subject": "history", "level": "intermediate", "q": "Which empire was the largest in history by land area?", "options": ["Roman Empire","British Empire","Mongol Empire","Ottoman Empire"], "answer": 2, "points": 2 },
+    { "id": 99, "subject": "history", "level": "intermediate", "q": "Who wrote 'The Communist Manifesto'?", "options": ["Lenin and Stalin","Marx and Engels","Mao and Lenin","Engels and Trotsky"], "answer": 1, "points": 2 },
+    { "id": 100, "subject": "history", "level": "intermediate", "q": "The Battle of Waterloo (1815) ended whose rule?", "options": ["King Louis XVI","Napoleon Bonaparte","Duke of Wellington","Otto von Bismarck"], "answer": 1, "points": 2 },
+    { "id": 101, "subject": "history", "level": "intermediate", "q": "What was the Marshall Plan?", "options": ["American military strategy in WWII","US economic aid program to rebuild post-war Europe","NATO's founding charter","A Cold War nuclear treaty"], "answer": 1, "points": 2 },
+    { "id": 102, "subject": "history", "level": "intermediate", "q": "Which country was the first to grant women the right to vote nationally?", "options": ["USA","UK","New Zealand","Australia"], "answer": 2, "points": 2 },
+    { "id": 103, "subject": "history", "level": "intermediate", "q": "The Silk Road connected China to which region?", "options": ["Africa","The Americas","Mediterranean and Middle East","Australia"], "answer": 2, "points": 2 },
+    { "id": 104, "subject": "history", "level": "intermediate", "q": "What event triggered the Great Depression?", "options": ["WWI armistice","1929 Wall Street Crash","The Dust Bowl","Bank of England collapse"], "answer": 1, "points": 2 },
+    { "id": 105, "subject": "history", "level": "intermediate", "q": "Which civilization created the first known writing system?", "options": ["Egyptian","Mesopotamian (Sumerian)","Chinese","Indus Valley"], "answer": 1, "points": 2 },
+    { "id": 106, "subject": "history", "level": "intermediate", "q": "The Cold War was primarily between which two superpowers?", "options": ["USA and China","UK and USSR","USA and USSR","Germany and USA"], "answer": 2, "points": 2 },
+    { "id": 107, "subject": "history", "level": "intermediate", "q": "In which year did India gain independence from Britain?", "options": ["1945","1947","1950","1948"], "answer": 1, "points": 2 },
+    { "id": 108, "subject": "history", "level": "intermediate", "q": "What was the 'Black Death'?", "options": ["A solar eclipse phenomenon","A devastating bubonic plague pandemic in medieval Europe","A volcanic eruption in 1347","A military campaign across Asia"], "answer": 1, "points": 2 },
+    { "id": 109, "subject": "history", "level": "intermediate", "q": "Who led the Cuban Revolution?", "options": ["Che Guevara","Fulgencio Batista","Fidel Castro","José Martí"], "answer": 2, "points": 2 },
+
+    { "id": 110, "subject": "history", "level": "expert", "q": "The Treaty of Westphalia (1648) is significant for establishing what principle?", "options": ["Free trade between European nations","State sovereignty and non-interference in internal affairs","The abolition of the Holy Roman Empire","Protestant dominance over Catholicism"], "answer": 1, "points": 3 },
+    { "id": 111, "subject": "history", "level": "expert", "q": "What was the primary economic cause of the Opium Wars?", "options": ["British desire for Chinese territory","Trade imbalance — Britain forced opium trade to offset silver deficit","Chinese monopoly on silk production","Disputes over the Canton System tariffs"], "answer": 1, "points": 3 },
+    { "id": 112, "subject": "history", "level": "expert", "q": "The Sykes-Picot Agreement (1916) had what long-lasting consequence?", "options": ["Established the League of Nations","Drew arbitrary borders in the Middle East that ignored ethnic divisions","Created the mandate for a Jewish homeland","Ended the Ottoman Empire's military power"], "answer": 1, "points": 3 },
+    { "id": 113, "subject": "history", "level": "expert", "q": "What was the 'Scramble for Africa' driven by?", "options": ["Missionary religious ambitions","European imperial competition for raw materials, markets, and strategic routes","Fighting the Atlantic slave trade","Exploration of unknown geography"], "answer": 1, "points": 3 },
+    { "id": 114, "subject": "history", "level": "expert", "q": "The concept of 'Lebensraum' was central to whose ideology?", "options": ["Mussolini's Fascism","Stalin's Marxism-Leninism","Hitler's National Socialism","Kaiser Wilhelm's Pangermanism"], "answer": 2, "points": 3 },
+    { "id": 115, "subject": "history", "level": "expert", "q": "What was the significance of the Battle of Tours (732 CE)?", "options": ["First Crusade victory in the Holy Land","Frankish victory halting Muslim expansion into Western Europe","Charlemagne's coronation as Holy Roman Emperor","End of Viking raids in France"], "answer": 1, "points": 3 },
+    { "id": 116, "subject": "history", "level": "expert", "q": "The Bretton Woods system established in 1944 created what?", "options": ["The United Nations Security Council","International Monetary Fund and World Bank with gold-pegged dollar","NATO collective defense alliance","The Marshall Plan aid framework"], "answer": 1, "points": 3 },
+    { "id": 117, "subject": "history", "level": "expert", "q": "What distinguished the Meiji Restoration in Japan from other modernization movements?", "options": ["Complete rejection of Western influence","Rapid self-directed industrialization preserving imperial authority","Military coup overthrowing the Emperor","Democratic revolution abolishing feudalism"], "answer": 1, "points": 3 },
+    { "id": 118, "subject": "history", "level": "expert", "q": "The Haitian Revolution (1791-1804) was unique in history because it was?", "options": ["First successful democratic revolution","Only successful slave revolt establishing an independent nation","First anti-colonial revolution in the Americas","The bloodiest revolution of the 18th century"], "answer": 1, "points": 3 },
+    { "id": 119, "subject": "history", "level": "expert", "q": "What was the primary failure of the League of Nations?", "options": ["Too many member states","Lack of USA membership and no enforcement mechanism","Financial insolvency","Military occupation by Britain and France"], "answer": 1, "points": 3 },
+    { "id": 120, "subject": "history", "level": "expert", "q": "The 'Long Telegram' sent by George Kennan in 1946 proposed what?", "options": ["Pre-emptive nuclear strike on the USSR","Containment strategy against Soviet expansionism","Formation of NATO","Economic embargo of Eastern Europe"], "answer": 1, "points": 3 },
+    { "id": 121, "subject": "history", "level": "expert", "q": "What was the main consequence of the Congress of Vienna (1815)?", "options": ["Creation of the German Empire","Restoration of conservative order and balance of power in Europe","Abolition of the Holy Roman Empire","French republican governance"], "answer": 1, "points": 3 },
+    { "id": 122, "subject": "history", "level": "expert", "q": "The Reconquista refers to?", "options": ["Portuguese colonization of Brazil","Iberian Christian kingdoms reconquering the Iberian Peninsula from Muslim rule","Spanish conquest of the Aztec Empire","The expulsion of Jews from Spain in 1492"], "answer": 1, "points": 3 },
+    { "id": 123, "subject": "history", "level": "expert", "q": "What was the 'Domino Theory' in Cold War geopolitics?", "options": ["MAD nuclear deterrence strategy","Belief that communist takeover of one country would lead neighboring states to fall","Theory of proxy wars replacing direct conflict","Economic dependency model for developing nations"], "answer": 1, "points": 3 },
+    { "id": 124, "subject": "history", "level": "expert", "q": "What marked the significance of the 1905 Russian Revolution?", "options": ["Overthrow of the Tsar","First major challenge to Tsarist authority leading to the October Manifesto","Bolshevik seizure of power","Formation of the Soviet Communist Party"], "answer": 1, "points": 3 }
+  ]
+}
+

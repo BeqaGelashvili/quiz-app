@@ -1,4 +1,3 @@
-
 function $(id) {
   return document.getElementById(id);
 }
@@ -49,8 +48,6 @@ function renderHome(subjects) {
         if (window.app?.selectSubject) window.app.selectSubject(subject.key);
       }, 1000);
     });
-
-
 
     grid.appendChild(card);
   });
@@ -115,6 +112,14 @@ function renderQuizQuestion(params) {
     isLast
   } = params;
 
+  const counterElement = document.querySelector('.question-counter');
+  if (counterElement) {
+    counterElement.textContent = ""; 
+    counterElement.style.textAlign = "center";
+    counterElement.style.display = "block";
+    counterElement.style.width = "100%";
+  }
+
   $('qSubject').textContent = subjectName;
   $('qLevel').textContent = levelLabel;
 
@@ -167,7 +172,7 @@ function renderResults(params) {
   let grade, msg, ringColor;
   if (pct >= 90)      { grade = '🏆 Masterful!';   msg = 'Outstanding. You truly know your stuff.'; ringColor = '#00e5a0'; }
   else if (pct >= 75) { grade = '⭐ Excellent!';    msg = 'Great performance — only minor gaps.'; ringColor = '#6c63ff'; }
-  else if (pct >= 60) { grade = '👍 Good Job!';     msg = 'Solid foundation. Keep pushing forward.'; ringColor = '#f59e0b'; }
+  else if (pct >= 60) { grade = '👍 Good Job!';      msg = 'Solid foundation. Keep pushing forward.'; ringColor = '#f59e0b'; }
   else if (pct >= 40) { grade = '📚 Keep Going!';   msg = 'Room to grow — revisit and try again.'; ringColor = '#f59e0b'; }
   else                { grade = '💡 Keep Learning'; msg = "Don't give up — every expert was once a novice."; ringColor = '#ef4444'; }
 
